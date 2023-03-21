@@ -18,13 +18,31 @@ public class TeamMemberController {
     @Autowired
     private TeamMembersRepository teamMembersRepository;
 
-    @GetMapping("/teammembers/")
-    public List<TeamMember> list()
+    @GetMapping("/teammembers/{teamId}")
+    public List<TeamMember> teamList(@PathVariable int teamId)
     {
         Iterable<TeamMember> teamIterable = teamMembersRepository.findAll();
         ArrayList<TeamMember> teamMembers = new ArrayList<>();
         for(TeamMember teamMember : teamIterable) {
-            teamMembers.add(teamMember);
+            if(teamMember.getTeamId() == teamId)
+            {
+                teamMembers.add(teamMember);
+            }
+        }
+        return teamMembers;
+    }
+    @GetMapping("/teammembers/{teamId}/positionInTheTeam")
+    public List<TeamMember> positionFilter(@PathVariable int teamId,
+                                           @RequestParam String positionInTheTeam)
+    {
+        Iterable<TeamMember> teamIterable = teamMembersRepository.findAll();
+        ArrayList<TeamMember> teamMembers = new ArrayList<>();
+        for(TeamMember teamMember : teamIterable) {
+            if(teamMember.getTeamId() == teamId &&
+                    teamMember.getPositionInTheTeam().equals(positionInTheTeam))
+            {
+                teamMembers.add(teamMember);
+            }
         }
         return teamMembers;
     }
@@ -34,35 +52,18 @@ public class TeamMemberController {
         TeamMember newTeamMember = teamMembersRepository.save(teamMember);
         return teamMember.getMemberId();
     }
-    @GetMapping("/teammembers/{id}")
-    public ResponseEntity get(@PathVariable int id)
+    @PutMapping("/teammembers/{memberId}")
+    public ResponseEntity transferMember(@PathVariable int memberId,
+                                         @RequestParam int teamId)
     {
-        Optional<TeamMember> optionalTeamMember = teamMembersRepository.findById(id);
+        Optional<TeamMember> optionalTeamMember = teamMembersRepository.findById(memberId);
         if(!optionalTeamMember.isPresent()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
+        optionalTeamMember.get().setTeamId(teamId);
         return new ResponseEntity(optionalTeamMember.get(), HttpStatus.OK);
     }
-    @DeleteMapping("/teammembers/{id}")
-    public ResponseEntity delete(@PathVariable int id)
-    {
-        Optional <TeamMember> optionalTeamMember = teamMembersRepository.findById(id);
-        if(optionalTeamMember.get() == null) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        }
-        teamMembersRepository.delete(optionalTeamMember.get());
-        return new ResponseEntity(optionalTeamMember.get(), HttpStatus.OK);
-    }
-    @DeleteMapping("/teammembers/")
-    public ResponseEntity deleteAll ()
-    {
-        if(teamMembersRepository.count() == 0) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        }
-        teamMembersRepository.deleteAll();
-        return new ResponseEntity(HttpStatus.OK);
-    }
-    @PutMapping("/teammembers/{id}")
+    @PutMapping("/teammembers/{memberId}")
     public ResponseEntity update (@PathVariable int memberId,
                                   @RequestParam int teamId,
                                   @RequestParam String surname,
@@ -80,5 +81,15 @@ public class TeamMemberController {
         optionalTeamMember.get().setPositionInTheTeam(positionInTheTeam);
         teamMembersRepository.save(optionalTeamMember.get());
         return new ResponseEntity(HttpStatus.OK);
+    }
+    @DeleteMapping("/teammembers/{memberId}")
+    public ResponseEntity delete(@PathVariable int memberId)
+    {
+        Optional <TeamMember> optionalTeamMember = teamMembersRepository.findById(memberId);
+        if(optionalTeamMember.get() == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+        teamMembersRepository.delete(optionalTeamMember.get());
+        return new ResponseEntity(optionalTeamMember.get(), HttpStatus.OK);
     }
 }
