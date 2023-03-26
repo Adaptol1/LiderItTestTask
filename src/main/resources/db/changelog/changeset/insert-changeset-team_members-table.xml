@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="tm-3" author="ShakirovTimur">
+        <insert tableName="team_members">
+            <column name="team_id" value="1"/>
+            <column name="surname" value="Шитов"/>
+            <column name="name" value="Владислав"/>
+            <column name="patronymic" value="Сергеевич"/>
+            <column name="date_of_birth" value="2003-05-07"/>
+            <column name="position_in_the_team" value="Нападающий"/>
+        </insert>
+        <insert tableName="team_members">
+            <column name="team_id" value="2"/>
+            <column name="surname" value="Тесленко"/>
+            <column name="name" value="Егор"/>
+            <column name="patronymic" value="Владимирович"/>
+            <column name="date_of_birth" value="2001-01-31"/>
+            <column name="position_in_the_team" value="Защитник"/>
+        </insert>
+        <insert tableName="team_members">
+            <column name="team_id" value="3"/>
+            <column name="surname" value="Юлдошев"/>
+            <column name="name" value="Иброхимхалил"/>
+            <column name="patronymic" value="Минниханович"/>
+            <column name="date_of_birth" value="2001-02-14"/>
+            <column name="position_in_the_team" value="Защитник"/>
+        </insert>
+        <insert tableName="team_members">
+            <column name="team_id" value="4"/>
+            <column name="surname" value="Урунов"/>
+            <column name="name" value="Остон"/>
+            <column name="patronymic" value="Нагоевич"/>
+            <column name="date_of_birth" value="2000-12-19"/>
+            <column name="position_in_the_team" value="Полузащитник"/>
+        </insert>
+        <insert tableName="team_members">
+            <column name="team_id" value="5"/>
+            <column name="surname" value="Карпукас"/>
+            <column name="name" value="Артём"/>
+            <column name="patronymic" value="Борисович"/>
+            <column name="date_of_birth" value="2002-06-13"/>
+            <column name="position_in_the_team" value="Полузащитник"/>
+        </insert>
+        <insert tableName="team_members">
+            <column name="team_id" value="1"/>
+            <column name="surname" value="Железнов"/>
+            <column name="name" value="Юрий"/>
+            <column name="patronymic" value="Денисович"/>
+            <column name="date_of_birth" value="2002-11-15"/>
+            <column name="position_in_the_team" value="Полузащитник"/>
+        </insert>
+        <insert tableName="team_members">
+            <column name="team_id" value="2"/>
+            <column name="surname" value="Бека-Бека"/>
+            <column name="name" value="Алексис"/>
+            <column name="date_of_birth" value="2001-03-29"/>
+            <column name="position_in_the_team" value="Полузащитник"/>
+        </insert>
+        <insert tableName="team_members">
+            <column name="team_id" value="3"/>
+            <column name="surname" value="Степанов"/>
+            <column name="name" value="Данил"/>
+            <column name="patronymic" value="Юрьевич"/>
+            <column name="date_of_birth" value="2000-01-25"/>
+            <column name="position_in_the_team" value="Нападающий"/>
+        </insert>
+        <insert tableName="team_members">
+            <column name="team_id" value="4"/>
+            <column name="surname" value="Боженов"/>
+            <column name="name" value="Кирилл"/>
+            <column name="patronymic" value="Вадимович"/>
+            <column name="date_of_birth" value="2000-12-07"/>
+            <column name="position_in_the_team" value="Вратарь"/>
+        </insert>
+        <insert tableName="team_members">
+            <column name="team_id" value="5"/>
+            <column name="surname" value="Умяров"/>
+            <column name="name" value="Наиль"/>
+            <column name="patronymic" value="Рифатович"/>
+            <column name="date_of_birth" value="2000-06-27"/>
+            <column name="position_in_the_team" value="Нападающий"/>
+        </insert>
+        <insert tableName="team_members">
+            <column name="team_id" value="1"/>
+            <column name="surname" value="Олакунле"/>
+            <column name="name" value="Олусегун"/>
+            <column name="date_of_birth" value="2002-04-23"/>
+            <column name="position_in_the_team" value="Нападающий"/>
+        </insert>
+        <insert tableName="team_members">
+            <column name="team_id" value="2"/>
+            <column name="surname" value="Щетинин"/>
+            <column name="name" value="Кирилл"/>
+            <column name="patronymic" value="Сергеевич"/>
+            <column name="date_of_birth" value="2002-01-17"/>
+            <column name="position_in_the_team" value="Полузащитник"/>
+        </insert>
+        <insert tableName="team_members">
+            <column name="team_id" value="3"/>
+            <column name="surname" value="Юри"/>
+            <column name="name" value="Алберто"/>
+            <column name="date_of_birth" value="2001-03-18"/>
+            <column name="position_in_the_team" value="Нападающий"/>
+        </insert>
+        <insert tableName="team_members">
+            <column name="team_id" value="4"/>
+            <column name="surname" value="Карапузов"/>
+            <column name="name" value="Владислав"/>
+            <column name="patronymic" value="Иванович"/>
+            <column name="date_of_birth" value="2000-01-06"/>
+            <column name="position_in_the_team" value="Вратарь"/>
+        </insert>
+        <insert tableName="team_members">
+            <column name="team_id" value="5"/>
+            <column name="surname" value="Сулейманов"/>
+            <column name="name" value="Тимур"/>
+            <column name="patronymic" value="Русланович"/>
+            <column name="date_of_birth" value="2000-03-17"/>
+            <column name="position_in_the_team" value="Нападающий"/>
+        </insert>
+        <insert tableName="team_members">
+            <column name="team_id" value="1"/>
+            <column name="surname" value="Кравцов"/>
+            <column name="name" value="Кирилл"/>
+            <column name="patronymic" value="Владимирович"/>
+            <column name="date_of_birth" value="2002-05-14"/>
+            <column name="position_in_the_team" value="Полузащитник"/>
+        </insert>
+        <insert tableName="team_members">
+            <column name="team_id" value="2"/>
+            <column name="surname" value="Глебов"/>
+            <column name="name" value="Данил"/>
+            <column name="patronymic" value="Николаевич"/>
+            <column name="date_of_birth" value="1999-11-03"/>
+            <column name="position_in_the_team" value="Полузащитник"/>
+        </insert>
+        <insert tableName="team_members">
+            <column name="team_id" value="3"/>
+            <column name="surname" value="Кривцов"/>
+            <column name="name" value="Никита"/>
+            <column name="patronymic" value="Владимирович"/>
+            <column name="date_of_birth" value="2002-08-18"/>
+            <column name="position_in_the_team" value="Полузащитник"/>
+        </insert>
+        <insert tableName="team_members">
+            <column name="team_id" value="4"/>
+            <column name="surname" value="Мелёхин"/>
+            <column name="name" value="Виктор"/>
+            <column name="patronymic" value="Сергеевич"/>
+            <column name="date_of_birth" value="2003-12-16"/>
+            <column name="position_in_the_team" value="Защитник"/>
+        </insert>
+        <insert tableName="team_members">
+            <column name="team_id" value="5"/>
+            <column name="surname" value="Кузмичёв"/>
+            <column name="name" value="Иван"/>
+            <column name="patronymic" value="Владиславович"/>
+            <column name="date_of_birth" value="2000-10-20"/>
+            <column name="position_in_the_team" value="Вратарь"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
